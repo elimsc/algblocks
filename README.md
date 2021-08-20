@@ -33,3 +33,32 @@ func Partition(a []int, l, r int) int {
 	return k
 }
 ```
+
+add linked list
+```go
+node1, node2 := targetLink, another // node1链表更长
+var prevNode1 *ListNode // 记录node1指针的前一个位置
+for node1 != nil || node2 != nil {
+    var sum int
+    if node2 == nil {
+        sum = node1.Val + carry
+    } else {
+        sum = node1.Val + node2.Val + carry
+    }
+    carry = 0
+    if sum >= 10 {
+        sum -= 10
+        carry = 1
+    }
+    prevNode1 = node1
+    node1.Val = sum
+    node1 = node1.Next
+    if node2 != nil {
+        node2 = node2.Next
+    }
+}
+if carry == 1 { // 新增尾节点
+    newNode := &ListNode{Val: 1}
+    prevNode1.Next = newNode
+}
+```
