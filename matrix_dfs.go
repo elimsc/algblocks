@@ -1,5 +1,7 @@
 package main
 
+// https://leetcode-cn.com/problems/number-of-islands/solution/dao-yu-lei-wen-ti-de-tong-yong-jie-fa-dfs-bian-li-/
+
 // 二维DFS
 func MatrixDFS(grid [][]byte, row, col int) {
 	if row < 0 || row >= len(grid) || col < 0 || col >= len(grid[0]) {
