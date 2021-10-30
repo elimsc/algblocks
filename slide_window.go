@@ -10,8 +10,8 @@ func minSubArrayLen(target int, nums []int) int {
 
 	l, r := 0, 0 // [l,r]
 	for ; r < len(nums); r++ {
-		sum += nums[r]
-		for sum >= target { // 收缩窗口
+		sum += nums[r]      // 1. r 加入到当前窗口
+		for sum >= target { // 2. 试图收缩窗口
 			curLen := r - l + 1
 			if curLen < minLen {
 				minLen = curLen
